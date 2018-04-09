@@ -12,7 +12,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //1.创建webview实例
+        let webview = UIWebView(frame: self.view.bounds)
+        //2.设置webview实例的属性
+        //2.1构造URL实例
+        let url = URL(string: "http//:www.gdcp.cn")
+        //2.2构建URLRequest实例
+        let request = URLRequest(url: url!)
+        //3.加载请求
+        webview.loadRequest(request)
+        self.view.addSubview(webview)
     }
 
     override func didReceiveMemoryWarning() {
